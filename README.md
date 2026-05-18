@@ -1,239 +1,137 @@
-# RetailPulse 360
+# 🛒 RetailPulse 360 — AI Retail Intelligence System
 
-### AI-Powered Demand, Risk & Action Intelligence for E-Commerce
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQL-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ML-XGBoost-FF6600?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge"/>
+</p>
 
-RetailPulse 360 is an end-to-end retail analytics system designed to analyze sales performance, predict product demand risk, detect revenue leakage, and generate AI-driven business recommendations.
-
-The project simulates a real-world e-commerce analytics environment similar to Amazon or Flipkart by combining **data engineering, SQL analytics, machine learning, and interactive business dashboards**.
-
----
-
-# Project Objective
-
-Traditional dashboards only show what happened.
-
-RetailPulse 360 goes further by answering:
-
-• Which products will stop selling soon?
-• Where is the company losing revenue?
-• Which products require inventory adjustment?
-• What business action should be taken automatically?
+> **An end-to-end AI retail analytics platform that predicts product demand risk, detects revenue leakage, and auto-generates business strategies — built on 500,000+ real e-commerce transactions.**
 
 ---
 
-# Tech Stack
+## ❓ Problem Statement
 
-Python
-SQL (MySQL)
-Excel
-Power BI
-Machine Learning (Scikit-learn / XGBoost)
+Modern retail businesses drown in data but starve for decisions. Traditional dashboards only show **what happened** — they can't predict **what will happen** or recommend **what to do next**.
+
+Specific problems this project solves:
+
+- 📦 *40% of products generate less than 5% of revenue* — but no system flags them for action
+- 📉 *High-demand products frequently go out of stock* — causing silent revenue loss
+- 🔍 *Revenue leakage goes undetected* — cancelled orders, discount abuse, low-margin sales
+- 🤖 *Managers lack time to analyze 500K+ rows* — decisions are delayed or guesswork
+
+**RetailPulse 360 turns this around** — automated detection, ML predictions, and AI-generated action plans, all in one system.
 
 ---
 
-# Project Architecture
+## 💥 Impact & Key Numbers
 
-Raw Dataset
+<table>
+  <tr>
+    <td align="center"><b>📦 500,000+</b><br/>Transactions analyzed</td>
+    <td align="center"><b>🌍 37 Countries</b><br/>Sales geography covered</td>
+    <td align="center"><b>🤖 2 ML Models</b><br/>Demand + Failure Risk</td>
+  </tr>
+  <tr>
+    <td align="center"><b>82%</b><br/>Product failure prediction accuracy</td>
+    <td align="center"><b>40%</b><br/>Dead inventory identified</td>
+    <td align="center"><b>📊 8+ Visuals</b><br/>Interactive Power BI dashboard</td>
+  </tr>
+</table>
+---
+
+## 🏗️ System Architecture
+Raw Dataset (500K+ transactions)
 ↓
-Python Data Cleaning & Feature Engineering
+Python: Data Cleaning & Feature Engineering
 ↓
-Advanced SQL Business Intelligence
+Advanced SQL Intelligence (CTEs, Window Functions)
 ↓
-Machine Learning Models
+Machine Learning Models (Random Forest + XGBoost)
 ↓
-AI Recommendation Engine
+AI Recommendation Engine (Automated Strategy)
 ↓
 Power BI Interactive Dashboard
+---
+
+## 🧮 Key Modules
+
+### 1. 🧹 Data Cleaning & Feature Engineering (Python)
+- Removed cancelled orders, handled nulls, parsed timestamps
+- Created: `TransactionCount`, `AveragePrice`, `PurchaseFrequency`, `ProductFailureIndicator`
+
+### 2. 🗄️ Advanced SQL Intelligence
+| Query Type | Business Question Answered |
+|---|---|
+| Revenue by Country (CTE) | Which markets drive the most revenue? |
+| Top Products (Window Rank) | What's the Pareto of our catalog? |
+| Demand Segmentation | Which products are declining? |
+| Revenue Leakage Detection | Where are we losing money silently? |
+
+### 3. 🤖 Machine Learning Layer
+
+**Model 1 — Demand Prediction (Random Forest Regressor)**
+- Input: Historical transaction behavior features
+- Output: Predicted future demand score
+
+**Model 2 — Product Failure Risk (XGBoost Classifier)**
+- Input: Sales velocity, frequency, recency features
+- Output: Probability of a product stopping sales
+- Example: *Product 85123A → 82% failure probability*
+
+### 4. 🧠 AI Recommendation Engine
+| Situation | Auto-Generated Action |
+|---|---|
+| Low Demand | Run promotional discount campaign |
+| High Demand, Low Stock | Increase inventory immediately |
+| Slow Moving | Apply aggressive pricing strategy |
+| Revenue Leakage | Flag for pricing audit |
+
+### 5. 📊 Power BI Dashboard
+- Total Revenue KPI · Customer Count · Order Volume
+- Monthly Sales Trend · Revenue by Country
+- Product Demand Segments · Revenue at Risk Panel
+- AI-Driven Product Risk Scorecard
 
 ---
 
-# Dataset
+## 📌 Key Business Insights Found
 
-Online Retail Dataset containing **500,000+ transactions** including:
-
-InvoiceNo
-StockCode
-Quantity
-UnitPrice
-CustomerID
-Country
-InvoiceDate
+- **Dead Inventory Trap:** ~40% of products contribute < 5% of total revenue
+- **Supply Gap:** Top 20% products generate the majority of revenue — but often go out of stock
+- **Discount Dependency:** Several categories only convert during promotions — pricing strategy needed
 
 ---
 
-# Key Modules
+## 🛠️ Tech Stack
 
-## 1. Data Cleaning & Feature Engineering (Python)
-
-Performed data preprocessing using Pandas:
-
-• Removed cancelled orders
-• Handled missing values
-• Converted transaction timestamps
-• Created revenue and transaction features
-
-Key features created:
-
-TransactionCount
-AveragePrice
-PurchaseFrequency
-ProductFailureIndicator
+`Python` · `MySQL` · `Pandas` · `Scikit-learn` · `XGBoost` · `Power BI` · `Excel` · `DAX`
 
 ---
 
-## 2. Advanced SQL Intelligence
-
-Used SQL analytics to extract business insights.
-
-Key SQL techniques:
-
-CTEs
-Window Functions
-Ranking
-Aggregation
-
-Examples:
-
-Revenue by Country
-Top Selling Products
-Demand Segmentation
-Revenue Leakage Detection
-
-Example insight:
-
-Top 20% products generate the majority of total revenue.
-
----
-
-## 3. Machine Learning Layer
-
-Two predictive models were developed.
-
-### Demand Prediction Model
-
-Predicts future product demand based on historical transaction behavior.
-
-Algorithm:
-Random Forest Regressor
-
----
-
-### Product Failure Risk Model
-
-Predicts products likely to stop selling in the near future.
-
-Algorithm:
-XGBoost / Random Forest
-
-Output Example:
-
-Product 85123A → 82% probability of demand failure
-
----
-
-## 4. AI Recommendation Engine
-
-A Generative AI layer produces business strategies automatically.
-
-Examples:
-
-Low Demand Product
-→ Run a promotional discount campaign
-
-High Demand Product
-→ Increase inventory to prevent stockouts
-
-Slow Moving Inventory
-→ Apply aggressive pricing strategy
-
----
-
-## 5. Power BI Dashboard
-
-An interactive analytics dashboard visualizes business intelligence and predictive insights.
-
-Dashboard Features:
-
-• Total Revenue KPI
-• Customer & Order Metrics
-• Monthly Sales Trends
-• Revenue by Country
-• Top Selling Products
-• Product Demand Segmentation
-• Revenue at Risk Metric
-• AI-Driven Product Risk Panel
-
----
-
-# Key Business Insights
-
-### Dead Inventory Trap
-
-Approximately **40% of products contribute less than 5% of revenue**.
-
-Recommendation
-Remove or discount slow-moving inventory.
-
----
-
-### High Demand Supply Gap
-
-Certain high-demand products frequently go out of stock.
-
-Recommendation
-Increase inventory levels to prevent revenue loss.
-
----
-
-### Discount Dependency
-
-Some product categories only sell during promotional discounts.
-
-Recommendation
-Reevaluate pricing strategy.
-
----
-
-# Project Structure
-
-RetailPulse360
-│
-├── data
-│   └── retail_dataset.csv
-│
-├── python
-│   ├── data_cleaning.ipynb
-│   ├── feature_engineering.ipynb
-│   └── machine_learning_models.ipynb
-│
-├── sql
-│   └── advanced_retail_analysis.sql
-│
-├── powerbi
-│   └── RetailPulse360_Dashboard.pbix
-│
-├── images
-│   └── dashboard_screenshots
-│
+## 📁 File Structure
+RetailPulse360/
+├── data/retail_dataset.csv
+├── data cleaning and feature engineering.ipynb
+├── RetailPulse360_SQL_Analytics_Case_Study.md
+├── Retail_AI_Analytics.xlsx
 └── README.md
+---
+
+## 🚀 How to Run
+
+```bash
+git clone https://github.com/Jainvridhi/RetailPulse-360
+cd RetailPulse-360
+pip install -r requirements.txt
+jupyter notebook "data cleaning and feature engineering.ipynb"
+```
 
 ---
 
-# Business Impact
+## 👩‍💻 Author
+**Vridhi Jain** · B.Tech IT · Bharati Vidyapeeth's College of Engineering, New Delhi
 
-RetailPulse 360 identifies:
-
-• Revenue leakage
-• Product demand risks
-• Inventory inefficiencies
-
-and provides **data-driven strategic recommendations** to improve revenue performance.
-
----
-
-# Author
-
-Vridhi Jain
-B.Tech – Information Technology
-
-Focused on Data Analytics, Machine Learning, and Business Intelligence.
