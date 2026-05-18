@@ -44,17 +44,14 @@ Specific problems this project solves:
 ---
 
 ## 🏗️ System Architecture
-Raw Dataset (500K+ transactions)
-↓
-Python: Data Cleaning & Feature Engineering
-↓
-Advanced SQL Intelligence (CTEs, Window Functions)
-↓
-Machine Learning Models (Random Forest + XGBoost)
-↓
-AI Recommendation Engine (Automated Strategy)
-↓
-Power BI Interactive Dashboard
+```mermaid
+flowchart TD
+    A[🗂️ Raw Dataset\n500K+ Transactions] --> B[🐍 Python\nData Cleaning & Feature Engineering]
+    B --> C[🗄️ SQL Intelligence\nCTEs · Window Functions · Aggregation]
+    C --> D[🤖 Machine Learning\nRandom Forest + XGBoost]
+    D --> E[💡 AI Recommendation Engine\nAutomated Business Strategy]
+    E --> F[📊 Power BI Dashboard\nInteractive Visuals]
+```
 ---
 
 ## 🧮 Key Modules
@@ -113,12 +110,30 @@ Power BI Interactive Dashboard
 ---
 
 ## 📁 File Structure
-RetailPulse360/
-├── data/retail_dataset.csv
-├── data cleaning and feature engineering.ipynb
-├── RetailPulse360_SQL_Analytics_Case_Study.md
-├── Retail_AI_Analytics.xlsx
-└── README.md
+```
+📦 RetailPulse360/
+│
+├── 📁 data/
+│   └── 📄 retail_dataset.csv              ← 500K+ raw transactions
+│
+├── 📓 data cleaning and                   ← Python: EDA, cleaning,
+│      feature engineering.ipynb               feature creation
+│
+├── 📝 RetailPulse360_SQL_Analytics        ← Advanced SQL queries
+│      _Case_Study.md                          (CTEs, Window Functions)
+│
+├── 📊 Retail_AI_Analytics.xlsx            ← Final cleaned dataset
+│                                              + ML output
+│
+└── 📄 README.md                           ← You are here
+```
+| File | Description |
+|------|-------------|
+| `data/retail_dataset.csv` | Raw dataset — 500K+ e-commerce transactions |
+| `data cleaning and feature engineering.ipynb` | Python EDA, null handling, feature creation |
+| `RetailPulse360_SQL_Analytics_Case_Study.md` | Advanced SQL — CTEs, window functions, insights |
+| `Retail_AI_Analytics.xlsx` | Final processed data + ML model outputs |
+| `README.md` | Project documentation |
 ---
 
 ## 🚀 How to Run
